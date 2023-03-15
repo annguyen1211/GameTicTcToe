@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class  MainActivity extends AppCompatActivity {
     TextView player1, player2;
     ImageView img1, img2, img3, img4, img5, img6, img7, img8, img9;
     LinearLayout player1Layout, player2Layout;
@@ -189,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (checkPlayerWin()){
 
-                WinDialog winDialog = new WinDialog(MainActivity.this, player1.getText().toString() + "Chiến thắng", MainActivity.this);
+                WinDialog winDialog = new WinDialog(MainActivity.this, player1.getText().toString() + " Chiến thắng", MainActivity.this);
                 winDialog.setCancelable(false);
                 winDialog.show();
             }
@@ -205,19 +205,13 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         else {
-            imageView.setImageResource(R.drawable.zero);
+            imageView.setImageResource(R.drawable.circle);
             if(checkPlayerWin()){
-                WinDialog winDialog = new WinDialog(MainActivity.this, player1.getText().toString() + "Chiến thắng", MainActivity.this);
+                WinDialog winDialog = new WinDialog(MainActivity.this, player2.getText().toString() + " Chiến thắng", MainActivity.this);
                 winDialog.setCancelable(false);
                 winDialog.show();
             }
 
-
-            else if(selectedBoxPosition == 9 ){
-                WinDialog winDialog = new WinDialog(MainActivity.this, player1.getText().toString() + "Chiến thắng", MainActivity.this);
-                winDialog.setCancelable(false);
-                winDialog.show();
-            }
             else {
                 changePlayerTurn(1);
                 totalSelectionBox++;
@@ -238,8 +232,8 @@ public class MainActivity extends AppCompatActivity {
 
         }
         else{
-            player2Layout.setBackgroundResource(R.drawable.round_black_dark_blue);
-            player1Layout.setBackgroundResource(R.drawable.round_black_blue_border);
+            player1Layout.setBackgroundResource(R.drawable.round_black_dark_blue);
+            player2Layout.setBackgroundResource(R.drawable.round_black_blue_border);
         }
     }
 
